@@ -19,7 +19,7 @@ python3 -m pip install -r requirements.txt
 | **TRANSLATION_MODEL** | :heavy_check_mark: | The model that you want to use to translate, e.g. aya-expanse:8b | 
 | **OPEN_WEBUI_APIKEY** | :heavy_check_mark: | Your Open-WebUI API key, can also be the JWT Token. |
 | **OPEN_WEBUI_URL** | :heavy_check_mark: | The URL for your Open-WebUI instance. |
-| **PORT** | :heavy_multiplication_x: | The port the script should run on. (default: 5000) |
+| **PORT** | :heavy_multiplication_x: | The port the script should run on. <br/><br/>(default: 5000) |
 | **BG_TYPE** | :heavy_multiplication_x: | The type of background the translated text should have.  <br/><br/>Options:  <br/>- **solid**  <br/>- **blur**  <br/><br/>(default: solid) |
 
 ### Example .env file:
