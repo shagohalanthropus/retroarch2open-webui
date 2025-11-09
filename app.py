@@ -8,7 +8,7 @@ from base64 import b64decode, b64encode
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
 from paddleocr import PaddleOCR, TextRecognition
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 from pprint import pprint
 
 
@@ -27,6 +27,7 @@ except KeyError as e:
 
 # Optional environment variables
 port = os.environ.get("PORT", 5000)
+bg_type = os.environ.get("BG_TYPE", "solid")
 
 def translate_image(image_file):
     # Set up PaddleOCR
@@ -48,11 +49,18 @@ def translate_image(image_file):
             for b, t in zip(boxes, texts):
                 # Translate our extracted text
                 translated_text = translate_text(t)["choices"][0]["message"]["content"]
-                draw = ImageDraw.Draw(img)
+                img_draw = ImageDraw.Draw(img)
                 # Draw both the bounding boxes and translated text to our image.
-                # xy is the upper left corner of the bounding box.
-                draw.rectangle(b, fill="black", outline="green")
-                draw.text(xy=(b[0], b[1]), text=translated_text, fill="white")
+                if bg_type.lower() == "blur":
+                    b_img = img.crop(b)
+                    b_img = b_img.filter(ImageFilter.GaussianBlur(radius=5))
+                    b_img_w, b_img_h = b_img.size
+                    b_img_draw = ImageDraw.Draw(b_img)
+                    b_img_draw.rectangle([0, 0, b_img_w - 1, b_img_h - 1], outline="green")
+                    img.paste(b_img, (b[0], b[1]))
+                else:
+                    img_draw.rectangle(b, fill="black", outline="green")
+                img_draw.text(xy=(b[0], b[1]), text=translated_text, fill="white", stroke_fill="black", stroke_width=1)
             img.save(image_file.name)
 
 # Send our extracted text to Open-WebUI for translation
