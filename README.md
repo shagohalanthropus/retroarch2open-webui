@@ -14,11 +14,12 @@ python3 -m pip install -r requirements.txt
 3. Create your .env file with the following environment variables:
 
 
-| Environment Variable  |Description                                                     |
-|-----------------------|----------------------------------------------------------------|
-| **TRANSLATION_MODEL** |The model that you want to use to translate, e.g. aya-expanse:8b|
-| **OPEN_WEBUI_APIKEY** |Your Open-WebUI API key, can also be the JWT Token.             |
-| **OPEN_WEBUI_URL**    |The URL for your Open-WebUI instance.                           |
+| Environment Variable  | Required                 | Description                                                      |
+|-----------------------|--------------------------|------------------------------------------------------------------|
+| **TRANSLATION_MODEL** | :heavy_check_mark:       | The model that you want to use to translate, e.g. aya-expanse:8b | 
+| **OPEN_WEBUI_APIKEY** | :heavy_check_mark:       | Your Open-WebUI API key, can also be the JWT Token.              |
+| **OPEN_WEBUI_URL**    | :heavy_check_mark:       | The URL for your Open-WebUI instance.                            |
+| **PORT**              | :heavy_multiplication_x: | The port the script should run on. (default: 5000)               |
 
 ### Example .env file:
 ```Dotenv

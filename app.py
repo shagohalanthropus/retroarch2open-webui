@@ -25,6 +25,8 @@ except KeyError as e:
     print(f"Couldn't find {e} in your .env file.")
     exit(1)
 
+port = os.environ.get("PORT", 5000)
+
 def translate_image(image_file):
     # Set up PaddleOCR
     ocr = PaddleOCR(
@@ -93,4 +95,4 @@ def retroarch_to_open_webui():
     return jsonify({"image": b64encode(open(image_file.name, "rb").read()).decode()})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=port)
