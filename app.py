@@ -25,6 +25,7 @@ except KeyError as e:
     print(f"Couldn't find {e} in your .env file.")
     exit(1)
 
+# Optional environment variables
 port = os.environ.get("PORT", 5000)
 
 def translate_image(image_file):
