@@ -20,7 +20,7 @@ python3 -m pip install -r requirements.txt
 | **OPEN_WEBUI_APIKEY** | :heavy_check_mark:       | Your Open-WebUI API key, can also be the JWT Token.                                                                              |
 | **OPEN_WEBUI_URL**    | :heavy_check_mark:       | The URL for your Open-WebUI instance.                                                                                            |
 | **PORT**              | :heavy_multiplication_x: | The port the script should run on. (default: 5000)                                                                               |
-| **BG_TYPE**           | :heavy_multiplication_x: | The type of background the translated text should have.  <br/>Options:  <br/>- **solid**  <br/>- **blur**  <br/>(default: solid) |
+| **BG_TYPE**           | :heavy_multiplication_x: | The type of background the translated text should have.  <br/><br/>Options:  <br/>- **solid**  <br/>- **blur**  <br/>(default: solid) |
 
 ### Example .env file:
 ```Dotenv
