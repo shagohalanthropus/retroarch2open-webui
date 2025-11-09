@@ -1,6 +1,5 @@
 #!/bin/python3
 
-import base64
 import os
 import requests
 import tempfile
