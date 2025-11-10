@@ -1,7 +1,7 @@
 # Retroarch2Open-WebUI
 A very basic proof of concept that allows Retroarch to get translations from models hosted on an Open-WebUI instance. 
 
-## How to use this script:
+## How To Use This Script
 1. Clone this repository.
 ```Shell
 git clone https://github.com/shagohalanthropus/retroarch2open-webui.git
@@ -46,7 +46,7 @@ works.
 - Perform manipulations on the image Retroarch sends for higher OCR accuracy.
 - Etc.
 
-## Modules/Libraries:
+## Modules/Libraries
 - dotenv: https://github.com/theskumar/python-dotenv
 - Flask: https://github.com/pallets/flask/
 - PaddleOCR: https://github.com/PaddlePaddle/PaddleOCR
