@@ -14,13 +14,18 @@ python3 -m pip install -r requirements.txt
 3. Create your .env file with the following environment variables:
 
 
-| Environment Variable | Required | Description |
-| :----: | :----: | :----: |
-| **TRANSLATION_MODEL** | :heavy_check_mark: | The model that you want to use to translate, e.g. aya-expanse:8b | 
-| **OPEN_WEBUI_APIKEY** | :heavy_check_mark: | Your Open-WebUI API key, can also be the JWT Token. |
-| **OPEN_WEBUI_URL** | :heavy_check_mark: | The URL for your Open-WebUI instance. |
-| **PORT** | :heavy_multiplication_x: | The port the script should run on. <br/><br/>(default: 5000) |
-| **BG_TYPE** | :heavy_multiplication_x: | The type of background the translated text should have.  <br/><br/>Options:  <br/>- **solid**  <br/>- **blur**  <br/><br/>(default: solid) |
+| Environment Variable | Required |                                                              Description                                                              |
+| :----: | :----: |:-------------------------------------------------------------------------------------------------------------------------------------:|
+| **TRANSLATION_MODEL** | :heavy_check_mark: |                                   The model that you want to use to translate, e.g. aya-expanse:8b                                    | 
+| **OPEN_WEBUI_APIKEY** | :heavy_check_mark: |                                          Your Open-WebUI API key, can also be the JWT Token.                                          |
+| **OPEN_WEBUI_URL** | :heavy_check_mark: |                                                 The URL for your Open-WebUI instance.                                                 |
+| **PORT** | :heavy_multiplication_x: |                                        The port the script should run on. <br/>(Default: 5000)                                        |
+| **BG_TYPE** | :heavy_multiplication_x: | The type of background the translated text should have.  <br/><br/>Options:  <br/>- **solid**  <br/>- **blur**  <br/>(Default: solid) |
+| **BG_COLOR** | :heavy_multiplication_x: |                                          The background color to use. <br/>(Default: black)                                           |
+| **BORDER_COLOR** | :heavy_multiplication_x: | The color of the border surrounding the translated text. <br/>(Default: green) |
+| **FONT_COLOR** | :heavy_multiplication_x: | The color to use for the font. <br/>(Default: white) |
+| **FONT_OUTLINE_COLOR** | :heavy_multiplication_x | The color to use as the outline for the font. </br>(Default: black) |
+*All variables that define color accept common HTML color names, e.g. "red" or hex codes, e.g. "#FFFFFF".
 
 ### Example .env file:
 ```Dotenv

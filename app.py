@@ -27,7 +27,13 @@ except KeyError as e:
 
 # Optional environment variables
 port = os.environ.get("PORT", 5000)
+
+# Style environment variables
 bg_type = os.environ.get("BG_TYPE", "solid")
+bg_color = os.environ.get("BG_COLOR", "black")
+border_color = os.environ.get("BORDER_COLOR", "green")
+font_color = os.environ.get("FONT_COLOR", "white")
+font_outline_color = os.environ.get("FONT_BORDER_COLOR", "black")
 
 def translate_image(image_file):
     # Set up PaddleOCR
@@ -56,11 +62,11 @@ def translate_image(image_file):
                     b_img = b_img.filter(ImageFilter.GaussianBlur(radius=5))
                     b_img_w, b_img_h = b_img.size
                     b_img_draw = ImageDraw.Draw(b_img)
-                    b_img_draw.rectangle([0, 0, b_img_w - 1, b_img_h - 1], outline="green")
+                    b_img_draw.rectangle([0, 0, b_img_w - 1, b_img_h - 1], outline=border_color)
                     img.paste(b_img, (b[0], b[1]))
                 else:
-                    img_draw.rectangle(b, fill="black", outline="green")
-                img_draw.text(xy=(b[0], b[1]), text=translated_text, fill="white", stroke_fill="black", stroke_width=1)
+                    img_draw.rectangle(b, fill=bg_color, outline=border_color)
+                img_draw.text(xy=(b[0], b[1]), text=translated_text, fill=font_color, stroke_fill=font_outline_color, stroke_width=1)
             img.save(image_file.name)
 
 # Send our extracted text to Open-WebUI for translation
