@@ -25,6 +25,7 @@ python3 -m pip install -r requirements.txt
 | **BORDER_COLOR** | :heavy_multiplication_x: | The color of the border surrounding the translated text. <br/>(Default: green) |
 | **FONT_COLOR** | :heavy_multiplication_x: | The color to use for the font. <br/>(Default: white) |
 | **FONT_OUTLINE_COLOR** | :heavy_multiplication_x | The color to use as the outline for the font. </br>(Default: black) |
+
 *All variables that define color accept common HTML color names, e.g. "red" or hex codes, e.g. "#FFFFFF".
 
 ### Example .env file:
